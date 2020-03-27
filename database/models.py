@@ -1,6 +1,6 @@
 from .db import db
 
-class DailyEntry(db.Document):
+class Report(db.Document):
     date = db.DateTimeField(required=True)
     country = db.StringField(required=True)
     geo_id = db.StringField(required=True)
