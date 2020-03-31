@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, request, Response
 from database.db import initialize_db
 from flask_restful import Api
@@ -7,7 +9,10 @@ app = Flask(__name__)
 api = Api(app)
 
 app.config['MONGODB_SETTINGS'] = {
-    'host': 'mongodb://localhost/trafalgar'
+    'username': os.environ['MONGODB_USERNAME'],
+    'password': os.environ['MONGODB_PASSWORD'],
+    'hostname': os.environ['MONGODB_HOSTNAME'],
+    'db': os.environ['MONGODB_DATABASE']
 }
 
 initialize_db(app)
