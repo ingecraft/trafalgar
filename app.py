@@ -12,7 +12,7 @@ app.config['MONGODB_SETTINGS'] = {
     'username': os.environ['MONGODB_USERNAME'],
     'password': os.environ['MONGODB_PASSWORD'],
     'hostname': os.environ['MONGODB_HOSTNAME'],
-    'db': os.environ['MONGODB_DATABASE']
+    'db': os.environ['MONGODB_DATABASE'],
 }
 
 initialize_db(app)

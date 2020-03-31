@@ -1,15 +1,14 @@
 FROM python:3.6.8-alpine3.9
 
-LABEL MAINTAINER="Dimitris Lyrintzis <spike.herman@gmail.com>"
+LABEL MAINTAINER="FirstName LastName <example@domain.com>"
 
 ENV GROUP_ID=1000 \
     USER_ID=1000
 
 WORKDIR /var/www/
 
-ADD ./requirements.txt /var/www/requirements.txt
-RUN pip install -r requirements.txt
 ADD . /var/www/
+RUN pip install -r requirements.txt
 RUN pip install gunicorn
 
 RUN addgroup -g $GROUP_ID www
