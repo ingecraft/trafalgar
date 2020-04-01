@@ -9,10 +9,10 @@ app = Flask(__name__)
 api = Api(app)
 
 app.config['MONGODB_SETTINGS'] = {
-    'username': os.environ['MONGODB_USERNAME'],
-    'password': os.environ['MONGODB_PASSWORD'],
-    'hostname': os.environ['MONGODB_HOSTNAME'],
-    'db': os.environ['MONGODB_DATABASE'],
+    'username': os.environ.get("MONGODB_USERNAME", ""),
+    'password': os.environ.get("MONGODB_PASSWORD", ""),
+    'host': os.environ.get("MONGODB_HOSTNAME", "localhost"),
+    'db': os.environ.get("MONGODB_DATABASE", "trafalgar"),
 }
 
 initialize_db(app)
