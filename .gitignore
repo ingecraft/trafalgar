@@ -63,3 +63,6 @@ next-steps.txt
 
 # slqite
 data.sqlite
+
+# env variables files
+.env
