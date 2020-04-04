@@ -65,4 +65,4 @@ next-steps.txt
 data.sqlite
 
 # env variables files
-.env
+env_vars.sh
